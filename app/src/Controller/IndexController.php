@@ -84,7 +84,9 @@ class IndexController extends AbstractController
          * Display that user's information in the view however you see fit. Consider what to display
          * in the view if the ID passed does not return a user.
          */
-
+		$userModel   = new Model\User();
+		$struri = explode('/', $_SERVER['REQUEST_URI']);
+		$view->user = $userModel->getById($struri[count($struri)-1]);
         $this->response->setBody($view->render());
         $this->response->send();
     }

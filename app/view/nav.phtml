@@ -9,3 +9,8 @@
 
     (The $nav array variable is already available in this space via the view.)
 //-->
+<?php
+foreach($nav as $item){
+	echo ' | <a href="/'.str_replace(" ", "-", strtolower(trim($item))).'">'.$item.'</a> | ';
+}
+?>
